@@ -20,11 +20,8 @@ clickEventFunc = function(e){
     let text = inputText.value
     // Post method to call API via axios
     let responsePromise = axios({
-        url: 'http://127.0.0.1:5000/find-word',
-        method: "POST",
-        data:{
-          input: text
-        }
+        url: 'http://127.0.0.1:5000/find-word?input=' + text,
+        method: "GET"
       })
     responsePromise.then((response) => {
         if(response.data.result == 'not-word'){
