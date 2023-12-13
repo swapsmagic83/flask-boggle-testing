@@ -1,0 +1,22 @@
+.body{
+    
+        display: flex;
+        justify-content: center;
+        background-color: gray;
+    
+}
+#game-container{
+    height: 210px;
+    width: 210px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+h1{
+    color: white;
+    background-color: gray;
+}
+.msg{
+    color: red;
+    background-color: white;
+}

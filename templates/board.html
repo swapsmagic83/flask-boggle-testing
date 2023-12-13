@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <link rel="stylesheet" href="/static/app.css">
+    <title>Boggle Board Game</title>
+</head>
+<body>
+  <div>
+    <div id="score">Score: </div>
+      <div id="best-score">Best Score: </div>
+    <div id="timer">Time left: </div>
+  </div>
+  <p>You have played game for {{session['count']}} times</p>
+    <h1 class="text-center">Boggle Board Game</h1>
+    <div class="container text-center" id="game-container">
+    <table class=" table">
+        <tbody class="">
+          {% for row in board %}
+          <tr class="" id="cell">
+            {% for cell in row %}
+            <td >{{ cell }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+      <form>
+        Write word here
+        <input type="text" placeholder="" name="word" id="input">
+        <button class="btn">Submit</button>
+      </form>
+
+      <h1 class="msg"></h1>
+      <ul class="wordlist">
+        Correct words for current session:
+      </ul>
+       <script src="https://unpkg.com/jquery"></script>
+      <script src="https://unpkg.com/axios/dist/axios.js"></script>
+      <script src="{{url_for('static', filename='app.js')}}"></script> 
+</body>
+</html>
+
+
+
